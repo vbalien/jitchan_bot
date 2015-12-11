@@ -13,7 +13,7 @@ def process_message(data):
     args = parser.parse_args(data['text'].split())
     if args.command[0][:4] != '&gt;':
         return
-    args.command[0] = args.command[0][4:]
+    args.command[0] = args.command[0][4:].strip()
 
     for plugin in plugins:
         if args.command[0] == plugin[0]:
