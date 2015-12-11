@@ -2,6 +2,10 @@ import argparse
 from ani_table import ani_table
 
 outputs = []
+plugins = []
+plugins.append(
+    ('애니편성', ani_table)
+)
 
 def process_message(data):
     parser = argparse.ArgumentParser(prog='PROG')
@@ -10,11 +14,6 @@ def process_message(data):
     if args.command[0][:4] != '&gt;':
         return
     args.command[0] = args.command[0][4:]
-
-    plugins = []
-    plugins.append(
-        ('애니편성', ani_table)
-    )
 
     for plugin in plugins:
         if args.command[0] == plugin[0]:
