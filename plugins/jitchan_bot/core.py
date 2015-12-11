@@ -10,10 +10,11 @@ plugins.append(
 def process_message(data):
     parser = argparse.ArgumentParser(prog='PROG')
     parser.add_argument('command', nargs='*')
-    args = parser.parse_args(data['text'].split())
-    if args.command[0][:4] != '&gt;':
+
+    if data['text'][:4] != '&gt;':
         return
-    args.command[0] = args.command[0][4:].strip()
+    data['text'] = data['text'][4:].strip()
+    args = parser.parse_args(data['text'].split())
 
     for plugin in plugins:
         if args.command[0] == plugin[0]:
