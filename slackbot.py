@@ -18,7 +18,7 @@ def dbg(debug_string):
     if debug:
         logging.info(debug_string)
 
-class RtmBot(object):
+class SlackBot(object):
     def __init__(self, token):
         self.last_ping = 0
         self.token = token
@@ -188,7 +188,7 @@ if __name__ == "__main__":
 
     config = yaml.load(open(args.config or 'rtmbot.conf', 'r'))
     debug = config["DEBUG"]
-    bot = RtmBot(config["SLACK_TOKEN"])
+    bot = SlackBot(config["SLACK_TOKEN"])
     site_plugins = []
     files_currently_downloading = []
     job_hash = {}
@@ -199,4 +199,3 @@ if __name__ == "__main__":
             with daemon.DaemonContext():
                 main_loop()
     main_loop()
-

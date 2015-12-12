@@ -11,7 +11,7 @@ plugins = [
 def process_message(data):
     parser = argparse.ArgumentParser(prog='jitchan_bot')
     parser.add_argument('command', nargs='*')
-
+    print(data)
     if data['text'][:4] != '&gt;':
         return
     data['text'] = data['text'][4:].strip()
