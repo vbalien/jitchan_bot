@@ -26,7 +26,7 @@ def ani_table(peer, command, outputs):
 
     ani_data = json.loads(ani_data)
     content = ['{}:{} | {}'.format(item['t'][:2], item['t'][2:], item['s']) for item in ani_data];
-    content.insert(0, ' Time | Title```\n```')
+    content.insert(0, ' Time | Title```\n```\n')
     msg = '*{day}요일 애니편성표*\n```\n{content}\n```'.format(
         day=day[cur_day],
         content='\n'.join(content)
