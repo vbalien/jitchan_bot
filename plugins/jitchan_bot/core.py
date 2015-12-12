@@ -1,14 +1,15 @@
 import argparse
-from ani_table import ani_table
+from plugins.ani_table import ani_table
+from plugins.md5 import md5 as hash_md5
 
 outputs = []
-plugins = []
-plugins.append(
-    ('애니편성', ani_table)
-)
+plugins = [
+    ('애니편성', ani_table),
+    ('md5', hash_md5),
+]
 
 def process_message(data):
-    parser = argparse.ArgumentParser(prog='PROG')
+    parser = argparse.ArgumentParser(prog='jitchan_bot')
     parser.add_argument('command', nargs='*')
 
     if data['text'][:4] != '&gt;':
