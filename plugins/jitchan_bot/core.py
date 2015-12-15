@@ -1,12 +1,12 @@
 import argparse
 import shlex
 from plugins.ani_table import ani_table
-from plugins.md5 import md5 as hash_md5
+from plugins.hash import hash_command
 
 outputs = []
 plugins = [
     ('애니편성', ani_table),
-    ('md5', hash_md5),
+    ('hash', hash_command),
 ]
 
 def process_message(data):
