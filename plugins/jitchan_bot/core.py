@@ -8,7 +8,7 @@ from plugins.saveload import save_command, load_command
 config = {}
 outputs = []
 plugins = [
-    ('애니편성', ani_table),
+    ('애니편성', ani_table), ('애니편성표', ani_table), ('애니', ani_table),
     ('hash', hash_command),
     ('출력', print_command),
     ('저장', save_command),
