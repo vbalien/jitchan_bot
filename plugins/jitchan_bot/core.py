@@ -2,11 +2,17 @@ import argparse
 import shlex
 from plugins.ani_table import ani_table
 from plugins.hash import hash_command
+from plugins._print import print_command
+from plugins.saveload import save_command, load_command
 
+config = {}
 outputs = []
 plugins = [
     ('애니편성', ani_table),
     ('hash', hash_command),
+    ('출력', print_command),
+    ('저장', save_command),
+    ('불러', load_command),
 ]
 
 def process_message(data):
