@@ -1,4 +1,4 @@
-saveload_data = ''
+saveload_data = '엘련만세!'
 
 def save_command(peer, command, outputs):
     global saveload_data
