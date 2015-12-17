@@ -15,7 +15,7 @@ def process_message(data):
 
     if data['text'][:4] != '&gt;':
         return
-    data['text'] = data['text'][4:].strip()
+    data['text'] = data['text'][4:].strip().replace('“', '"').replace('”', '"')
     args = parser.parse_args(shlex.split(data['text']))
 
     for plugin in plugins:
